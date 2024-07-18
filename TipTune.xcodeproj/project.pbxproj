@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE0C6D7B2C47318100A92672 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0C6D7A2C47318100A92672 /* LoginView.swift */; };
+		AE0C6D7D2C4833B900A92672 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0C6D7C2C4833B900A92672 /* InputView.swift */; };
+		AE0C6D7F2C49820300A92672 /* InitializationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0C6D7E2C49820300A92672 /* InitializationView.swift */; };
+		AE0C6D812C49873B00A92672 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0C6D802C49873B00A92672 /* RegistrationView.swift */; };
 		AE44466F2C2DF1AD00C68CA8 /* TipTuneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE44466E2C2DF1AD00C68CA8 /* TipTuneApp.swift */; };
 		AE4446712C2DF1AD00C68CA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4446702C2DF1AD00C68CA8 /* ContentView.swift */; };
 		AE4446732C2DF1B200C68CA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE4446722C2DF1B200C68CA8 /* Assets.xcassets */; };
@@ -14,6 +18,7 @@
 		AE4446802C2DF1B300C68CA8 /* TipTuneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE44467F2C2DF1B300C68CA8 /* TipTuneTests.swift */; };
 		AE44468A2C2DF1B300C68CA8 /* TipTuneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4446892C2DF1B300C68CA8 /* TipTuneUITests.swift */; };
 		AE44468C2C2DF1B300C68CA8 /* TipTuneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE44468B2C2DF1B300C68CA8 /* TipTuneUITestsLaunchTests.swift */; };
+		AE44469C2C2F903C00C68CA8 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE44469B2C2F903C00C68CA8 /* InputTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE0C6D7A2C47318100A92672 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AE0C6D7C2C4833B900A92672 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		AE0C6D7E2C49820300A92672 /* InitializationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializationView.swift; sourceTree = "<group>"; };
+		AE0C6D802C49873B00A92672 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		AE44466B2C2DF1AD00C68CA8 /* TipTune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipTune.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE44466E2C2DF1AD00C68CA8 /* TipTuneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTuneApp.swift; sourceTree = "<group>"; };
 		AE4446702C2DF1AD00C68CA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +53,7 @@
 		AE4446852C2DF1B300C68CA8 /* TipTuneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipTuneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4446892C2DF1B300C68CA8 /* TipTuneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTuneUITests.swift; sourceTree = "<group>"; };
 		AE44468B2C2DF1B300C68CA8 /* TipTuneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTuneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AE44469B2C2F903C00C68CA8 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE0C6D732C47300D00A92672 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AE44466E2C2DF1AD00C68CA8 /* TipTuneApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AE0C6D742C47301500A92672 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AE0C6D762C47302500A92672 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AE0C6D782C47311000A92672 /* Authentication */,
+				AE0C6D792C47312200A92672 /* Profile */,
+				AE0C6D772C4730FC00A92672 /* Root */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AE0C6D772C4730FC00A92672 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				AE4446702C2DF1AD00C68CA8 /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		AE0C6D782C47311000A92672 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				AE0C6D7A2C47318100A92672 /* LoginView.swift */,
+				AE0C6D7E2C49820300A92672 /* InitializationView.swift */,
+				AE0C6D802C49873B00A92672 /* RegistrationView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		AE0C6D792C47312200A92672 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		AE4446622C2DF1AD00C68CA8 = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +154,10 @@
 		AE44466D2C2DF1AD00C68CA8 /* TipTune */ = {
 			isa = PBXGroup;
 			children = (
-				AE44466E2C2DF1AD00C68CA8 /* TipTuneApp.swift */,
-				AE4446702C2DF1AD00C68CA8 /* ContentView.swift */,
+				AE0C6D732C47300D00A92672 /* App */,
+				AE4446982C2DFFD900C68CA8 /* Components */,
+				AE0C6D762C47302500A92672 /* Core */,
+				AE0C6D742C47301500A92672 /* Model */,
 				AE4446722C2DF1B200C68CA8 /* Assets.xcassets */,
 				AE4446742C2DF1B200C68CA8 /* Preview Content */,
 			);
@@ -125,6 +187,15 @@
 				AE44468B2C2DF1B300C68CA8 /* TipTuneUITestsLaunchTests.swift */,
 			);
 			path = TipTuneUITests;
+			sourceTree = "<group>";
+		};
+		AE4446982C2DFFD900C68CA8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AE44469B2C2F903C00C68CA8 /* InputTextField.swift */,
+				AE0C6D7C2C4833B900A92672 /* InputView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +329,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE4446712C2DF1AD00C68CA8 /* ContentView.swift in Sources */,
+				AE44469C2C2F903C00C68CA8 /* InputTextField.swift in Sources */,
+				AE0C6D7F2C49820300A92672 /* InitializationView.swift in Sources */,
+				AE0C6D812C49873B00A92672 /* RegistrationView.swift in Sources */,
+				AE0C6D7D2C4833B900A92672 /* InputView.swift in Sources */,
+				AE0C6D7B2C47318100A92672 /* LoginView.swift in Sources */,
 				AE44466F2C2DF1AD00C68CA8 /* TipTuneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
