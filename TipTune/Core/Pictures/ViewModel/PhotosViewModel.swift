@@ -72,7 +72,7 @@ final class PhotoPickerViewModel: ObservableObject{
         
     }
     
-    func fetchProfilePicture(path: String) async -> UIImage?{
+    func fetchPicture(path: String) async -> UIImage?{
           
           // Get a reference to storage
         let storageRef = Storage.storage().reference()
@@ -87,27 +87,23 @@ final class PhotoPickerViewModel: ObservableObject{
                return nil
            }
         
-//        var image: UIImage?
-//          // get data
-//          fileRef.getData(maxSize: 5*1024*1024) { data, error in
-//              if error == nil && data != nil {
-//                  if let uiImage = UIImage(data: data!){
-//                      image = uiImage
-//                  }
-////                  guard let uiImage = UIImage(data:data!) else {
-////                      print("fail")
-////                      return}
-////                  print("")
-////                  image = uiImage
-//                  
-//              } else{
-//                  print("fail")
-//              }
-//              
-//              
-//          }
-//          return image
+//
           
           
       }
+    
+    func deletePicture(path: String) async throws {
+        // Get reference to storage
+        let storageRef = Storage.storage().reference()
+        // get file reference
+        let fileRef = storageRef.child(path)
+        
+        do {
+            try await fileRef.delete()
+            print("succesful deletion")
+        } catch {
+            print ("error : \(error.localizedDescription)")
+            throw error
+        }
+    }
 }

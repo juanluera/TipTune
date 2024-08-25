@@ -15,7 +15,7 @@ struct User: Identifiable, Codable {
     var email: String
     var url: String?
     
-    //static let `default` = User(id: 0, balance: 50, fullname: "John Appleseed", email: "someone@mit.edu", profilepicture: nil)
+    static let `default` = User(id: NSUUID().uuidString, balance: 500, fullname: "Juan Manzana", email: "alguien@email.com" )
     
     var initials: String {
         let formatter = PersonNameComponentsFormatter()

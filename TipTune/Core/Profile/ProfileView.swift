@@ -16,7 +16,7 @@ struct ProfileView: View {
         if let user = viewModel.currentUser {
             List {
                 Section { // profile circle
-                    ProfilePictureDetail( initials:user.initials,fullname: user.fullname ,email: user.email)
+                    ProfilePictureDetail(url: user.url, initials:user.initials,fullname: user.fullname ,email: user.email)
                 }
                 Section {
                     BalanceDetail()
@@ -24,9 +24,9 @@ struct ProfileView: View {
                 
                 Section("Acount") {
                     Button {
-                        print("Edit Profile")
+                        print("Delete Account")
                     } label: {
-                        Text("Edit Profile")
+                        Text("Delete Account")
                     }
 
                     Button {

@@ -47,7 +47,12 @@ struct ProfileEditView: View {
                         
                         Button{
                             print("upload")
-                            viewModel.uploadProfilePicture(image: image)
+                            Task {
+                                do {
+                                    await viewModel.uploadProfilePicture(image: image)
+                                }
+                            }
+                            
                         } label: {
                             Text("upload Photo")
                         }

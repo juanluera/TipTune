@@ -63,18 +63,21 @@ struct ProfilePictureDetail: View {
                     Spacer()
                 }
             }.onAppear(){
-                if url != nil {
+                guard let url = url else { return }
+                        
+                        // Reset the profilePicture state to trigger a loading state
+                profilePicture = nil
                     Task {
-                        guard let image = await photosModel.fetchProfilePicture(path: url!) else {
-                            print("error")
-                            return
-                        }
+                        let image = await photosModel.fetchPicture(path: url)
+                        
                         profilePicture = image
+                        }
+                        
                         
                     }
-                }
                 
-            }
+                
+            
         
         
         }

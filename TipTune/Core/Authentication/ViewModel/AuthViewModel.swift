@@ -21,6 +21,7 @@ protocol AuthenticationFormProtocol {
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var currentUser: User?
+    @StateObject private var photosModel = PhotoPickerViewModel()
     
     init(){
         self.userSession = Auth.auth().currentUser
@@ -80,7 +81,18 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func uploadProfilePicture(image: UIImage!) {
+    func uploadProfilePicture(image: UIImage!) async {
+        //check the url isn't nil
+        guard let user = self.currentUser else {return}
+                
+//        if user.url != nil{
+//            do {
+//                try await photosModel.deletePicture(path: user.url!)
+//            } catch {
+//                print("error ; \(error.localizedDescription)")
+//            }
+//            
+//        }
         // get uid
         guard let uid = Auth.auth().currentUser?.uid else {
             print("fail 1")
@@ -100,7 +112,7 @@ class AuthViewModel: ObservableObject {
         
         //upload Data
         
-        let uploadTask = fileRef.putData(imageData!, metadata: nil) { metadata, error in
+        fileRef.putData(imageData!, metadata: nil) { metadata, error in
             
             if error == nil && metadata != nil {
                 let db = Firestore.firestore()
