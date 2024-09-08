@@ -63,8 +63,21 @@ struct LoginView: View {
                     
                 }
             }
+            
+         
         }
+        HStack {
+            Text("Forgot Password? ")
+            NavigationLink {
+                ForgotPasswordView()
+            } label: {
+                Text("Click Here")
+            }
+        }
+        
+       
     }
+    
 }
 
 extension LoginView: AuthenticationFormProtocol {

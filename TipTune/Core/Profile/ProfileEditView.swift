@@ -24,6 +24,15 @@ struct ProfileEditView: View {
                 }
             }
             Section{
+                HStack{
+                    Text("email: ")
+                    Spacer()
+                    TextField("email: ", text: $user.email)
+                        .foregroundStyle(.secondary)
+                        
+                }
+            }
+            Section{
                 VStack{
                     ProfilePictureDetail(url: user.url, initials:user.initials,fullname: user.fullname ,email: user.email)
                     

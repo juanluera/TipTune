@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct LoadingView: View {
+    var text: String?
+    var scale: Double
+    var tint: Color
+    @State var scaleEffect: CGSize = CGSize(width: 1, height: 1)
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            if(text != nil) {
+                ProgressView(text!).scaleEffect(scaleEffect).progressViewStyle(CircularProgressViewStyle(tint: tint))
+            }
+            else{
+                ProgressView().scaleEffect(scaleEffect).progressViewStyle(CircularProgressViewStyle(tint: tint))
+            }
+        }.onAppear{
+            scaleEffect = CGSize(width: scale, height: scale)
+        }
     }
 }
 
+
+
 #Preview {
-    LoadingView()
+    LoadingView(text: "Loading", scale: 1, tint: .black)
 }

@@ -63,9 +63,24 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func deleteAccount() {
+    func resetPassword(email: String) async -> Bool{
+        do {
+            try await Auth.auth().sendPasswordReset(withEmail: email)
+            return true
+        } catch {
+            return false
+        }
+        
         
     }
+    
+//    func changeFullname(fullname: String) async throws {
+//        // define change request
+//        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+//        
+//        changeRequest?.
+//        
+//    }
     
     func fetchUser() async {
         guard let uid = Auth.auth().currentUser?.uid else {return}
@@ -77,6 +92,37 @@ class AuthViewModel: ObservableObject {
         if self.currentUser == nil {
             Task {
                 signOut()
+            }
+        }
+    }
+    
+    func fetchUserData() async -> User? {
+        return nil
+    }
+    
+    func updateEmail(newEmail: String) async throws {
+        try await Auth.auth().currentUser?.updateEmail(to:newEmail)
+    }
+    
+    func updateName(newName: String) async throws {
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        // fistore reference
+        let db = Firestore.firestore()
+        //update name
+        try await db.collection("users").document(uid).updateData(["fullname": newName])
+        
+        
+    }
+    
+    
+    func deleteAccount() {
+        let user = Auth.auth().currentUser
+        
+        user?.delete{ error in
+            if error == nil{
+                print("Account Succesfully Deleted")
+            } else {
+                print("error: \(error!.localizedDescription)")
             }
         }
     }
@@ -97,6 +143,7 @@ class AuthViewModel: ObservableObject {
         guard let uid = Auth.auth().currentUser?.uid else {
             print("fail 1")
             return}
+        
         //create storage ref
         let storageRef = Storage.storage().reference()
         //turn image to data
@@ -118,6 +165,7 @@ class AuthViewModel: ObservableObject {
                 let db = Firestore.firestore()
                 
                 db.collection("users").document(uid).updateData(["url": path])
+//                self.currentUser?.url = path
             }
             else{
                 print("fail 3")

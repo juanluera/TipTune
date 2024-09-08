@@ -25,6 +25,7 @@ struct ProfileView: View {
                 Section("Acount") {
                     Button {
                         print("Delete Account")
+                        viewModel.deleteAccount()
                     } label: {
                         Text("Delete Account")
                     }
