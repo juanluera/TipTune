@@ -1,1 +1,16 @@
 GoogleService-Info.plist
+# macOS system files
+.DS_Store
+TipTune/.DS_Store
+TipTune/Assets.xcassets/.DS_Store
+
+# Xcode user-specific data
+TipTune.xcodeproj/xcuserdata/
+TipTune.xcodeproj/project.xcworkspace/xcuserdata/
+
+# Optional: Ignore datasets if they are not critical
+TipTune/Assets.xcassets/*.dataset/
+
+# Optional: Ignore video files if they are temporary or large
+TipTune/Videos/
+
