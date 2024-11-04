@@ -58,14 +58,6 @@ struct HomeView: View {
                     ])
                 }
             }
-            
-            MainNavBar(
-                onHomeTapped: { print("Home tapped") },
-                onBrowseTapped: { print("Browse tapped") },
-                onNotificationsTapped: { print("Notifications tapped") },
-                onProfileTapped: { print("Profile tapped") }
-            )
-
         }
     }
 }

@@ -18,7 +18,7 @@ struct GiftMarketView: View {
         ScrollView{
             LazyVGrid(columns: columns, spacing: 20){
                 ForEach(gifts){ gift in
-                    GiftCardView(gift: gift, onPurchase: { print("tapped gift")} )
+                    GiftCardView(gift: gift, onPurchase: { print("tapped gift \(gift.name)")} )
                 }
             }
             .padding()
